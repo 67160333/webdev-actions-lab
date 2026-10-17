@@ -1,0 +1,92 @@
+:root {
+  --bg: #f4f4f5;
+  --card: #ffffff;
+  --text: #18181b;
+  --muted: #52525b;
+  --border: #e4e4e7;
+  --accent: #1769aa;
+  --accent-text: #ffffff;
+  --shadow: 0 12px 32px #00000014;
+}
+body.dark {
+  --bg: #0f0f11;
+  --card: #1c1c20;
+  --text: #f4f4f5;
+  --muted: #a1a1aa;
+  --border: #2e2e33;
+  --accent: #2dd4bf;
+  --accent-text: #0f0f11;
+  --shadow: 0 12px 32px #00000066;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, "Noto Sans Thai", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+  transition: background .25s, color .25s;
+}
+
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; flex-wrap: wrap;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.brand { font-weight: 700; }
+nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+nav a { color: var(--text); text-decoration: none; font-size: 15px; }
+nav a:hover { color: var(--accent); }
+
+main {
+  max-width: 760px;
+  margin: 32px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.hero { text-align: center; }
+h1 { margin: 0 0 8px; font-size: clamp(24px, 5vw, 34px); }
+h2 { margin-top: 0; }
+.welcome { color: var(--muted); }
+#status { font-weight: 600; min-height: 1.6em; }
+
+.actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+button {
+  background: var(--accent);
+  color: var(--accent-text);
+  border: 0;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+button:hover { filter: brightness(1.08); }
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+nav button.ghost { padding: 6px 12px; font-size: 14px; }
+
+.skills { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.skills li { border: 1px solid var(--border); border-radius: 999px; padding: 4px 14px; }
+.contact { padding-left: 18px; }
+.contact a { color: var(--accent); }
+
+footer { text-align: center; color: var(--muted); font-size: 14px; padding: 24px 16px 40px; }
